@@ -1,9 +1,14 @@
 import "../styles/App.css";
+import LocationDetails from "./LocationDetails";
+import ForecastSummary from "./ForecastSummary";
 
-function App() {
+function App({ location, forecasts }) {
+  const { city, country } = location;
+  const { date } = forecasts;
   return (
     <div className="App">
-      <h1>Weather App</h1>
+      <LocationDetails city={city} country={country} />
+      <ForecastSummary date={date} />
     </div>
   );
 }
