@@ -4,11 +4,17 @@ import ForecastSummary from "./ForecastSummary";
 
 function App({ location, forecasts }) {
   const { city, country } = location;
-  const { date } = forecasts;
+  const { date, description, temperature, icon } = forecasts;
+
   return (
     <div className="App">
       <LocationDetails city={city} country={country} />
-      <ForecastSummary date={date} />
+      <ForecastSummary
+        date={date}
+        description={description}
+        temperature={temperature}
+        icon={icon}
+      />
     </div>
   );
 }
