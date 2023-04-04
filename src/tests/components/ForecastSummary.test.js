@@ -1,4 +1,6 @@
 import React from "react";
+import { render } from "@testing-library/react";
+import ForecastSummary from "../../components/ForecastSummary";
 
 describe("ForcastSummary", () => {
   const validProps = {
@@ -11,5 +13,15 @@ describe("ForcastSummary", () => {
     },
   };
 
-  it("Renders ok", () => {});
+  it("Renders ok", () => {
+    const { asFragment } = render(
+      <ForecastSummary
+        date={validProps.date}
+        description={validProps.description}
+        icon={validProps.icon}
+        temperature={validProps.temperature}
+      />
+    );
+    expect(asFragment()).toMatchSnapshot();
+  });
 });

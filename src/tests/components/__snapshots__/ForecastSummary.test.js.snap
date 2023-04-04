@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForcastSummary Renders ok 1`] = `
+<DocumentFragment>
+  <h3>
+    
+    Thu Jan 01 1970 
+    Stub Description 
+    stubIcon 
+    22°C
+  </h3>
+</DocumentFragment>
+`;
