@@ -5,11 +5,16 @@ function ForecastSummary(props) {
   const longdate = new Date(date);
   const newdate = longdate.toDateString(0);
   return (
-    <h3>{`
-    ${newdate} 
-    ${description} 
-    ${icon} 
-    ${temperature.max}\u00B0C`}</h3>
+    <div className="forecast-summary">
+      <div className="forecast-summary_date">{newdate}</div>
+      <div className="forecast-summary_description">{description}</div>
+      <div className="forecast-summary_icon" data-testid="forecast-icon">
+        {icon}
+      </div>
+      <div className="forecast-summary_temperature">
+        {temperature.max}&#8451;
+      </div>
+    </div>
   );
 }
 

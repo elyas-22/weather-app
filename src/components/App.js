@@ -1,20 +1,13 @@
 import "../styles/App.css";
 import LocationDetails from "./LocationDetails";
-import ForecastSummary from "./ForecastSummary";
+import ForecastSummaries from "./ForecastSummaries";
 
-function App({ location, forecasts }) {
-  const { city, country } = location;
-  const { date, description, temperature, icon } = forecasts;
-
+function App(props) {
+  const { location, forecasts } = props;
   return (
     <div className="App">
-      <LocationDetails city={city} country={country} />
-      <ForecastSummary
-        date={date}
-        description={description}
-        temperature={temperature}
-        icon={icon}
-      />
+      <LocationDetails city={location.city} country={location.country} />
+      <ForecastSummaries forecasts={forecasts} />
     </div>
   );
 }
